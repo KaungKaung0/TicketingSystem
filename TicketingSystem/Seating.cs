@@ -26,6 +26,18 @@ namespace TicketingSystem
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Sale select = new Sale();
+            select.seat_select(button1.Text);
+            button1.Enabled = false; 
+        }
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Sale select = new Sale();
+            select.seat_select(button10.Text);
+            button10.Enabled = false;
+        }
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -35,17 +47,14 @@ namespace TicketingSystem
         {
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            button1.Enabled = false; 
-        }
-
         private void Confirm_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             Sales saleform = new Sales();
             saleform.Show();
         }
+
+        
     }
 }

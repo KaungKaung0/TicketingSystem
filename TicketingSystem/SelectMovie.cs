@@ -17,39 +17,22 @@ namespace TicketingSystem
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Seating seatingForm = new Seating();
-            seatingForm.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Seating seatingForm = new Seating();
-            seatingForm.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Seating seatingForm = new Seating();
-            seatingForm.Show();
-        }
-
         private void SelectMovie_Load(object sender, EventArgs e)
         {
-
-            Movie movie = new Movie();
-            receiver = movie.Show();
-           for(int i=0; i<= receiver.Length; i++) {
-                for(int j = 0; j <= receiver.Length; j++)
-                {
-                    MessageBox.Show(receiver[j]);
-                }
-            }
+            Movie query = new Movie();
+            receiver = query.Show();
+            button1.Text = receiver[0];
+            button2.Text = receiver[1];
+            button3.Text = receiver[2];
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string movie= button1.Text;
+            this.Hide();
+            Sale select = new Sale();
+            select.movie_select(movie);
         }
     }
 }

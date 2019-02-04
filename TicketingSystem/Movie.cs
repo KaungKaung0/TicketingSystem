@@ -8,7 +8,8 @@ namespace TicketingSystem
 {
     class Movie
     {
-        readonly MySqlConnection connection;
+        MySqlConnection connection;
+        String selected_movie;
         public Movie()
         {
             string entry = "Data Source=127.0.0.1;" + "Initial Catalog=cinema_ticket_system;" + "User id=root;" + "Password='';";
@@ -36,7 +37,8 @@ namespace TicketingSystem
             try
             {
                
-                string query = "SELECT movie_name FROM movie ORDER BY [movie_id] DESC LIMIT 1";
+                string query = "SELECT movie_name FROM movie ORDER BY movie_id DESC LIMIT 3";
+                connection.Open();
                 MySqlCommand command = new MySqlCommand(query, connection);
                 MySqlDataReader reader = command.ExecuteReader(); 
                 while(reader.Read())
@@ -52,5 +54,6 @@ namespace TicketingSystem
             }
             return name;
         }
+       
     }
 }
