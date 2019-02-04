@@ -1,0 +1,36 @@
+D:\Kaung\C#\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.exe
+D:\Kaung\C#\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.pdb
+D:\Kaung\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Kaung\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Form1.resources
+D:\Kaung\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Properties.Resources.resources
+D:\Kaung\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Kaung\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Kaung\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.exe
+D:\Kaung\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.pdb
+D:\Kaung\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Form2.resources
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.exe
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.pdb
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.exe
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.pdb
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Properties.Resources.resources
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Login.resources
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Seating.resources
+D:\Kaung San\C#\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.SelectMovie.resources
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.exe
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\bin\Debug\TicketingSystem.pdb
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Seating.resources
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Login.resources
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Properties.Resources.resources
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.SelectMovie.resources
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.csproj.GenerateResource.cache
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.csproj.CoreCompileInputs.cache
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.exe
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.pdb
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Sales.resources
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.csprojAssemblyReference.cache
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\bin\Debug\MySql.Data.dll
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\bin\Debug\MySql.Data.xml
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.csproj.CopyComplete
