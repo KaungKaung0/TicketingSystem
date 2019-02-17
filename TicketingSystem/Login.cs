@@ -32,7 +32,7 @@ namespace TicketingSystem
             if(success)
             {
                 this.Hide();
-                SelectMovie open = new SelectMovie();
+                Home open = new Home();
                 open.Show();
             }
     

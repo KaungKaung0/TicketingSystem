@@ -9,7 +9,7 @@ namespace TicketingSystem
     class Movie
     {
         MySqlConnection connection;
-        String selected_movie;
+        
         public Movie()
         {
             string entry = "Data Source=127.0.0.1;" + "Initial Catalog=cinema_ticket_system;" + "User id=root;" + "Password='';";
