@@ -29,7 +29,7 @@ namespace TicketingSystem
         private void button1_Click(object sender, EventArgs e)
         {
             Sale select = new Sale();
-            select.seat_select(button1.Text);
+            select.select_seat(button1.Text);
             button1.Enabled = false; 
         }
         private void button10_Click(object sender, EventArgs e)

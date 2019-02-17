@@ -28,5 +28,12 @@ namespace TicketingSystem
             SelectMovie open = new SelectMovie();
             open.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            AddMovie add = new AddMovie();
+            this.Hide();
+            add.Show();
+        }
     }
 }

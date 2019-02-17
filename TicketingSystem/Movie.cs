@@ -19,9 +19,11 @@ namespace TicketingSystem
         {
             try
             {
+                
                 string insert = "INSERT INTO movie(movie_name,movie_genre) VALUES('"+name+"','"+category+"')";
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(insert, connection);
+                MySqlDataReader reader = command.ExecuteReader();
                 MessageBox.Show("Success!");
             }
             catch(Exception ex)

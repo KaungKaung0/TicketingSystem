@@ -36,3 +36,4 @@ C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\bin\Debug\My
 C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.csproj.CopyComplete
 C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.TimeSelect.resources
 C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.Home.resources
+C:\Users\Kaung\Documents\New folder\TicketingSystem\TicketingSystem\obj\x86\Debug\TicketingSystem.AddMovie.resources
