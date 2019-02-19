@@ -15,12 +15,12 @@ namespace TicketingSystem
             string entry = "Data Source=127.0.0.1;" + "Initial Catalog=cinema_ticket_system;" + "User id=root;" + "Password='';";
             connection = new MySqlConnection(entry);
         }
-        public void Insert(string name,string category)
+        public void Insert(string name,string category,string theater)
         {
             try
             {
                 
-                string insert = "INSERT INTO movie(movie_name,movie_genre) VALUES('"+name+"','"+category+"')";
+                string insert = "INSERT INTO movie(movie_name,movie_genre,theater_name) VALUES('"+name+"','"+category+"','"+theater+"')";
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(insert, connection);
                 MySqlDataReader reader = command.ExecuteReader();
@@ -46,7 +46,6 @@ namespace TicketingSystem
                 while(reader.Read())
                 {
                     name[i] = reader["movie_name"].ToString();
-                    Console.WriteLine(name[i]);
                     i++;
                 }
             }

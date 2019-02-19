@@ -9,8 +9,6 @@ namespace TicketingSystem
     class Sale
     {
         MySqlConnection connection;
-        string seat_selected;
-        string[] total_seat = new string[60];
         public Sale()
         {
             string entry = "Data Source=127.0.0.1;" + "Initial Catalog=cinema_ticket_system;" + "User id=root;" + "Password='';";
@@ -37,11 +35,8 @@ namespace TicketingSystem
                     {
                         connection.Close();
                         return v_id;
-
                     }
-                }
-                
-                
+                }       
             }
             catch(Exception ex)
             {
@@ -50,17 +45,19 @@ namespace TicketingSystem
             return "Null";
             
         }
-        public void movie_select(string movie)
+        public void start()
         {
-            createVoucher(movie);
-            TimeSelect time = new TimeSelect();
-            time.Show();
+            string movie = SelectMovie.selected_movie;
+            string time = TimeSelect.selected_time;
+            createVoucher(movie,time);
+            Seating seating = new Seating();
+            seating.Show();
         }
-        public void createVoucher(string movie)
+        public void createVoucher(string movie,string time)
         {
             try
             {
-                string insert = "INSERT INTO voucher(movie_name)VALUES('" + movie + "')";
+                string insert = "INSERT INTO voucher(movie_name,show_time)VALUES('" + movie + "','"+time+"')";
                 connection.Open();
                 MySqlCommand command = new MySqlCommand(insert, connection);
                 MySqlDataReader reader = command.ExecuteReader();
@@ -74,33 +71,36 @@ namespace TicketingSystem
             }   
                            
         }
-        public void time_select(string time)
+      
+        public void select_seat(string seat)
         {
             string id = getLastId();
-            addTime(time,id);
-            Seating seat = new Seating();
-            seat.Show();
-        }
-        public void addTime(string time,string id)
-        {
+            string seat_name = seat;
+            char seat_id = seat_name[0];
+            string movie_name = SelectMovie.selected_movie;
+            record(id, seat_id, seat_name, movie_name);
+     
             
+        }
+        public void record(string id, char s_id, string s_no, string movie_name)
+        {
             try
             {
-                string update = "UPDATE voucher SET show_time  = '" + time + "' WHERE voucher_id = '" + id +"' ";
+                string insert = "INSERT INTO sale(voucher_id,seat_id,seat_no,movie_name) VALUES('" + id + "','" + s_id + "','" + s_no + "','" + movie_name + "')";
                 connection.Open();
-                MySqlCommand command = new MySqlCommand(update, connection);
-                MySqlDataReader reader = command.ExecuteReader();
+                MySqlCommand command = new MySqlCommand(insert, connection);
+                MySqlDataReader mySqlDataReader = command.ExecuteReader();
+                connection.Close();
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
             }
         }
-        public void select_seat(string seat)
-        {
-            string id = getLastId();
 
-            
+        public void showVoucher()
+        {
+
         }
         
     }

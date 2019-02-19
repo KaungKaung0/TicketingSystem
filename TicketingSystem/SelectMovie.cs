@@ -11,6 +11,7 @@ namespace TicketingSystem
 {
     public partial class SelectMovie : Form
     {
+        public static string selected_movie = "";
         string[] receiver = new string[3];
         public SelectMovie()
         {
@@ -29,10 +30,27 @@ namespace TicketingSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string movie= button1.Text;
-            this.Hide();
-            Sale select = new Sale();
-            select.movie_select(movie);
+           
+            selected_movie = button1.Text;
+            this.Close();
+            TimeSelect timeSelect = new TimeSelect();
+            timeSelect.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            selected_movie = button2.Text;
+            this.Close();
+            TimeSelect timeSelect = new TimeSelect();
+            timeSelect.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            selected_movie = button3.Text;
+            this.Close();
+            TimeSelect timeSelect = new TimeSelect();
+            timeSelect.Show();
         }
     }
 }

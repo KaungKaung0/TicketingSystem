@@ -11,6 +11,7 @@ namespace TicketingSystem
 {
     public partial class TimeSelect : Form
     {
+        public static string selected_time = "";
         public TimeSelect()
         {
             InitializeComponent();
@@ -18,23 +19,28 @@ namespace TicketingSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            selected_time = button1.Text;
             Sale select = new Sale();
-            select.time_select(button1.Text);
-            this.Hide();
+            select.start();
+            this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Sale select = new Sale();
-            select.time_select(button2.Text);
+            selected_time = button2.Text;
+            select.start();
             this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             Sale select = new Sale();
-            select.time_select(button3.Text);
+            selected_time = button3.Text;
+            select.start();
             this.Hide();
         }
+
+       
     }
 }

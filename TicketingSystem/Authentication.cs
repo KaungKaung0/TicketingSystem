@@ -14,13 +14,13 @@ namespace TicketingSystem
             {
                 string entry = "Data Source=127.0.0.1;" + "Initial Catalog=cinema_ticket_system;" + "User id=root;" + "Password='';";
                 MySqlConnection conn = new MySqlConnection(entry);
-                string query = "SELECT staff_email FROM staff WHERE staff_email='" + email + "' AND staff_password='" + password + "'";
+                string query = "SELECT email FROM staff WHERE email='" + email + "' AND password='" + password + "'";
                 MySqlCommand command = new MySqlCommand(query, conn);
                 conn.Open();
                 MySqlDataReader reader = command.ExecuteReader();
                 while (reader.Read())
                 {
-                    if(reader["staff_email"].ToString() == email)
+                    if(reader["email"].ToString() == email)
                     {
                         success = true;
                     }

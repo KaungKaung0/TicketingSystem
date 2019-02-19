@@ -26,13 +26,14 @@ namespace TicketingSystem
         private void button3_Click(object sender, EventArgs e)
         {
             SelectMovie open = new SelectMovie();
+            this.Close();
             open.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             AddMovie add = new AddMovie();
-            this.Hide();
+            this.Close();
             add.Show();
         }
     }

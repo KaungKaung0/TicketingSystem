@@ -20,8 +20,9 @@ namespace TicketingSystem
         {
             string name = textBox1.Text;
             string category = textBox2.Text;
+            string theater = textBox3.Text;
             Movie add = new Movie();
-            add.Insert(name, category);
+            add.Insert(name, category,theater);
             this.Close();
             Home home = new Home();
             home.Show();
