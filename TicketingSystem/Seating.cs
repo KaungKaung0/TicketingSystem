@@ -11,6 +11,7 @@ namespace TicketingSystem
 {
     public partial class Seating : Form
     {
+       
         
         public Seating()
         {
@@ -24,12 +25,14 @@ namespace TicketingSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
             Sale select = new Sale();
             select.select_seat(button1.Text);
             button1.Enabled = false; 
         }
         private void button10_Click(object sender, EventArgs e)
         {
+           
             Sale select = new Sale();
             select.select_seat(button10.Text);
             button10.Enabled = false;
@@ -37,6 +40,8 @@ namespace TicketingSystem
 
         private void button9_Click(object sender, EventArgs e)
         {
+         
+         
             Sale select = new Sale();
             select.select_seat(button9.Text);
             button9.Enabled = false;
@@ -46,7 +51,7 @@ namespace TicketingSystem
 
             this.Close();
             Sale sale = new Sale();
-            sale.showVoucher();
+            sale.confirmed();
           
         }
 

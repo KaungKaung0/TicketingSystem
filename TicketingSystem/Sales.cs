@@ -25,5 +25,11 @@ namespace TicketingSystem
         {
             MessageBox.Show("You have purchased successfully");
         }
+
+        private void Sales_Load(object sender, EventArgs e)
+        {
+            label9.Text = TimeSelect.date;
+            label10.Text = SelectMovie.selected_movie;
+        }
     }
 }

@@ -98,10 +98,140 @@ namespace TicketingSystem
             }
         }
 
-        public void showVoucher()
+        public void confirmed()
         {
+            string hall = getHall();
+            string seatlist = getAllSeats();
+            int i = calcTotal();
+            
+            Console.WriteLine(i);
+            Console.WriteLine(seatlist);
+           
+
+
 
         }
-        
+        public string getHall()
+        {
+            string movie = SelectMovie.selected_movie;
+            try
+            {
+                string get = "SELECT theater_name FROM movie WHERE movie_name = '"+movie+"'";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(get, connection);
+                MySqlDataReader data = command.ExecuteReader();
+                while (data.Read())
+                {
+                    movie = data["theater_name"].ToString();
+                }
+                connection.Close();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return movie;
+        }
+        public string getAllSeats()
+        {
+            string id = getLastId();
+            string seatlist = "";
+            try
+            {
+                string get = "SELECT seat_no FROM sale WHERE voucher_id= '" + id + "'";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(get, connection);
+                MySqlDataReader mySqlDataReader = command.ExecuteReader();
+                while (mySqlDataReader.Read())
+                {
+                    seatlist = seatlist +"," + mySqlDataReader["seat_no"].ToString();
+                }
+                connection.Close();
+               
+            }catch(Exception ex)
+            {
+
+            }
+            return seatlist;
+        }
+
+        //Seat price and total cost calculation
+
+        public int calcTotal()
+        {
+          
+            string[] bought_seat = bought_seat_id();
+            string[] raw = seat_price();
+
+            int seat_A = Int32.Parse(raw[0]);
+            int seat_B = Int32.Parse(raw[1]);
+            int seat_C = Int32.Parse(raw[2]);
+
+            int total = 0;
+            for(int i =0; i < bought_seat.Length; i++)
+            {
+               if(bought_seat[i] == "A")
+                {
+                    total = total + seat_A;
+                }
+               else if(bought_seat[i] == "B"){
+                    total = total + seat_B;
+                }
+               else if(bought_seat[i] == "C")
+                {
+                    total = total + seat_C;
+                }
+            }
+            return total;
+            
+        }
+        public string[] bought_seat_id()
+        {
+            string id = getLastId();
+            string[] data = new string[3];
+            int i = 0;
+            try
+            {
+                string get = "SELECT seat_id FROM sale WHERE voucher_id = '" + id + "'";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(get, connection);
+                MySqlDataReader mySqlDataReader = command.ExecuteReader();
+                while (mySqlDataReader.Read())
+                {
+                    data[i] = mySqlDataReader["seat_id"].ToString();
+                    i++;
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return data;
+
+        }
+        public string[] seat_price()
+        {
+            string id = getLastId();
+           
+            string[] data = new string[3];
+            int i = 0;
+            try
+            {
+                string get = "SELECT price FROM seat";
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(get, connection);
+                MySqlDataReader mySqlDataReader = command.ExecuteReader();
+                while (mySqlDataReader.Read())
+                {
+
+                    data[i] =mySqlDataReader["price"].ToString();
+                    i++;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return data;
+        }
     }
 }
