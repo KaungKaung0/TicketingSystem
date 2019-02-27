@@ -9,6 +9,7 @@ namespace TicketingSystem
     class Sale
     {
         MySqlConnection connection;
+       
         public Sale()
         {
             string entry = "Data Source=127.0.0.1;" + "Initial Catalog=cinema_ticket_system;" + "User id=root;" + "Password='';";
@@ -26,17 +27,18 @@ namespace TicketingSystem
                 while (reader.Read())
                 {
                     v_id = reader["voucher_id"].ToString();
-                    if (String.IsNullOrEmpty(v_id))
-                    {
-                        Console.WriteLine("Null");
-                      
-                    }
-                    else
-                    {
-                        connection.Close();
-                        return v_id;
-                    }
-                }       
+                }
+                connection.Close();
+                if (String.IsNullOrEmpty(v_id))
+                {
+                    Console.WriteLine("Null");
+
+                }
+                else
+                {
+                    return v_id;
+                }
+
             }
             catch(Exception ex)
             {
@@ -103,12 +105,7 @@ namespace TicketingSystem
             string hall = getHall();
             string seatlist = getAllSeats();
             int i = calcTotal();
-            
             Console.WriteLine(i);
-            Console.WriteLine(seatlist);
-           
-
-
 
         }
         public string getHall()
@@ -157,34 +154,7 @@ namespace TicketingSystem
 
         //Seat price and total cost calculation
 
-        public int calcTotal()
-        {
-          
-            string[] bought_seat = bought_seat_id();
-            string[] raw = seat_price();
-
-            int seat_A = Int32.Parse(raw[0]);
-            int seat_B = Int32.Parse(raw[1]);
-            int seat_C = Int32.Parse(raw[2]);
-
-            int total = 0;
-            for(int i =0; i < bought_seat.Length; i++)
-            {
-               if(bought_seat[i] == "A")
-                {
-                    total = total + seat_A;
-                }
-               else if(bought_seat[i] == "B"){
-                    total = total + seat_B;
-                }
-               else if(bought_seat[i] == "C")
-                {
-                    total = total + seat_C;
-                }
-            }
-            return total;
-            
-        }
+        
         public string[] bought_seat_id()
         {
             string id = getLastId();
@@ -231,7 +201,27 @@ namespace TicketingSystem
             {
                 Console.WriteLine(ex);
             }
+         
+            //convert string to array
+           Console.WriteLine(data[0]);
+            Console.WriteLine(data[1]);
+            Console.WriteLine(data[2]);
+
             return data;
+        }
+        public int calcTotal()
+        {
+            int total = 0;
+            string[] bought_seat = bought_seat_id();
+         string[] raw = new string[3];
+
+        int seat_A = int.Parse(raw[0]);
+            int seat_B = int.Parse(raw[1]);
+
+            int seat_C = int.Parse(raw[2]);
+
+            return seat_A;
+
         }
     }
 }

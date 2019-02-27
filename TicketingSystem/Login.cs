@@ -23,13 +23,14 @@ namespace TicketingSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             string email, password;
-            Boolean success=false;
-            email = textBox1.Text;
-            password = textBox2.Text;
+           Boolean success=false;
+           email = textBox1.Text;
+           password = textBox2.Text;
             Authentication auth = new Authentication();
             success = auth.Auth(email, password);
-            if(success)
+           if(success)
             {
                 this.Hide();
                 Home open = new Home();
