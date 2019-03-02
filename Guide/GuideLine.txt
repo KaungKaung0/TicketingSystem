@@ -1,4 +1,3 @@
--Use Mysql Connector in the Guide Folder
 
 -Target Framework's screenshot is included.
 
