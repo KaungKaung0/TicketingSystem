@@ -1,0 +1,8 @@
+-Use Mysql Connector in the Guide Folder
+
+-Target Framework's screenshot is included.
+
+-import the mysql database file in Guide to your database
+
+
+Thats All!
