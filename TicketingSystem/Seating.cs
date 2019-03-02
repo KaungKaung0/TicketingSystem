@@ -11,8 +11,9 @@ namespace TicketingSystem
 {
     public partial class Seating : Form
     {
-       
-        
+        string[] receiver = new string[3];
+        public static int seat_A, seat_B, seat_C;
+
         public Seating()
         {
             InitializeComponent();
@@ -50,11 +51,21 @@ namespace TicketingSystem
         {
 
             this.Close();
-            Sale sale = new Sale();
-            sale.confirmed();
+            Sales voucher = new Sales();
+            voucher.Show();
           
         }
 
-        
+        private void Seating_Load(object sender, EventArgs e)
+        {
+            Sale sale = new Sale();
+            receiver = sale.seat_price();
+            label3.Text = "Seat A - " + receiver[0];
+            label4.Text = "Seat B - " + receiver[1];
+            label5.Text = "Seat C - " + receiver[2];
+            seat_A = int.Parse(receiver[0]);
+            seat_B = int.Parse(receiver[1]);
+            seat_C = int.Parse(receiver[2]);
+        }
     }
 }

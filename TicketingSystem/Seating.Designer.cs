@@ -146,7 +146,6 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "A8";
             this.button4.UseVisualStyleBackColor = true;
-            
             // 
             // button5
             // 
@@ -839,7 +838,7 @@
             this.Name = "Seating";
             this.Text = "Form1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            
+            this.Load += new System.EventHandler(this.Seating_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

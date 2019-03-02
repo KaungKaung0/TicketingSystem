@@ -33,7 +33,7 @@ namespace TicketingSystem
             date = dateTimePicker1.Text;
             selected_time = button2.Text;
             select.start();
-            this.Hide();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -42,9 +42,9 @@ namespace TicketingSystem
             date = dateTimePicker1.Text;
             selected_time = button3.Text;
             select.start();
-            this.Hide();
+            this.Close();
         }
 
-       
+     
     }
 }

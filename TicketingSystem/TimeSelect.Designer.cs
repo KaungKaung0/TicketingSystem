@@ -94,6 +94,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TimeSelect";
             this.Text = "TimeSelect";
+            
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -100,14 +100,7 @@ namespace TicketingSystem
             }
         }
 
-        public void confirmed()
-        {
-            string hall = getHall();
-            string seatlist = getAllSeats();
-            int i = calcTotal();
-            Console.WriteLine(i);
-
-        }
+       
         public string getHall()
         {
             string movie = SelectMovie.selected_movie;
@@ -171,6 +164,7 @@ namespace TicketingSystem
                     data[i] = mySqlDataReader["seat_id"].ToString();
                     i++;
                 }
+                connection.Close();
             }catch(Exception ex)
             {
                 Console.WriteLine(ex);
@@ -193,35 +187,67 @@ namespace TicketingSystem
                 while (mySqlDataReader.Read())
                 {
 
-                    data[i] =mySqlDataReader["price"].ToString();
+                    data[i] = mySqlDataReader["price"].ToString();
                     i++;
                 }
+                connection.Close();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
             }
-         
-            //convert string to array
-           Console.WriteLine(data[0]);
-            Console.WriteLine(data[1]);
-            Console.WriteLine(data[2]);
 
             return data;
         }
-        public int calcTotal()
+        public string calcTotal()
         {
-            int total = 0;
             string[] bought_seat = bought_seat_id();
-         string[] raw = new string[3];
+            int seat_A = Seating.seat_A;
+            int seat_B = Seating.seat_B;
+            int seat_C = Seating.seat_C;
 
-        int seat_A = int.Parse(raw[0]);
-            int seat_B = int.Parse(raw[1]);
-
-            int seat_C = int.Parse(raw[2]);
-
-            return seat_A;
-
+            int total = 0;
+            string total_price = "";
+            for (int i = 0; i < bought_seat.Length; i++)
+            {
+                if (bought_seat[i] == "A")
+                {
+                    total = total + seat_A;
+                }
+                else if (bought_seat[i] == "B")
+                {
+                    total = total + seat_B;
+                }
+                else if (bought_seat[i] == "C")
+                {
+                    total = total + seat_C;
+                }
+            }
+            total_price = total.ToString();
+            return total_price;
+        }
+         public void sold_confirm()
+        {
+            string id = getLastId();
+            string all_seats = getAllSeats();
+            int seat_count = 0;
+            foreach(char c in all_seats)
+            {
+                if (c == ',') seat_count++;
+            }
+            
+            int price = int.Parse(calcTotal());
+            try
+            {
+                string update = "UPDATE voucher SET seat_no = '" + all_seats + "',total_seats ='" + seat_count + "',total_amount='" + price + "'  WHERE voucher_id = '" + id + "'";
+                connection.Open();
+                MySqlCommand mySqlCommand = new MySqlCommand(update, connection);
+                MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+            };
         }
     }
 }
