@@ -47,9 +47,11 @@ namespace TicketingSystem
             select.select_seat(button9.Text);
             button9.Enabled = false;
         }
+
+  
+
         private void Confirm_Click(object sender, EventArgs e)
         {
-
             this.Close();
             Sales voucher = new Sales();
             voucher.Show();

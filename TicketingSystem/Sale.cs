@@ -140,8 +140,9 @@ namespace TicketingSystem
                
             }catch(Exception ex)
             {
-
+                Console.WriteLine(ex);
             }
+            Console.WriteLine(seatlist);
             return seatlist;
         }
 
@@ -247,6 +248,7 @@ namespace TicketingSystem
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex);
             };
         }
     }
