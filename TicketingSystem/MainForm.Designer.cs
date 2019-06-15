@@ -247,25 +247,24 @@
             this.CheckPanel.Controls.Add(this.ShowDateLabel);
             this.CheckPanel.Controls.Add(this.label5);
             this.CheckPanel.Controls.Add(this.Voucher);
-            this.CheckPanel.Location = new System.Drawing.Point(499, 0);
+            this.CheckPanel.Location = new System.Drawing.Point(500, 0);
             this.CheckPanel.Name = "CheckPanel";
-            this.CheckPanel.Size = new System.Drawing.Size(341, 536);
+            this.CheckPanel.Size = new System.Drawing.Size(340, 536);
             this.CheckPanel.TabIndex = 2;
             // 
             // TotalPrice
             // 
-            this.TotalPrice.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TotalPrice.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TotalPrice.AutoSize = true;
             this.TotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TotalPrice.Location = new System.Drawing.Point(133, 174);
             this.TotalPrice.Name = "TotalPrice";
-            this.TotalPrice.Size = new System.Drawing.Size(28, 15);
+            this.TotalPrice.Size = new System.Drawing.Size(0, 15);
             this.TotalPrice.TabIndex = 11;
-            this.TotalPrice.Text = "0Ks";
             // 
             // label11
             // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(3, 174);
@@ -277,17 +276,17 @@
             // btnSold
             // 
             this.btnSold.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSold.Location = new System.Drawing.Point(243, 491);
+            this.btnSold.Location = new System.Drawing.Point(242, 491);
             this.btnSold.Name = "btnSold";
             this.btnSold.Size = new System.Drawing.Size(89, 40);
             this.btnSold.TabIndex = 9;
             this.btnSold.Text = "Buy";
             this.btnSold.UseVisualStyleBackColor = true;
+            this.btnSold.Click += new System.EventHandler(this.BtnSold_Click);
             // 
             // SelectedSeat
             // 
-            this.SelectedSeat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectedSeat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.SelectedSeat.AutoSize = true;
             this.SelectedSeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SelectedSeat.Location = new System.Drawing.Point(133, 141);
@@ -298,6 +297,7 @@
             // 
             // label10
             // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(3, 141);
@@ -308,6 +308,7 @@
             // 
             // ShowTimeLabel
             // 
+            this.ShowTimeLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ShowTimeLabel.AutoSize = true;
             this.ShowTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShowTimeLabel.Location = new System.Drawing.Point(133, 97);
@@ -318,6 +319,7 @@
             // 
             // label9
             // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(3, 97);
@@ -328,8 +330,7 @@
             // 
             // MovieLabel
             // 
-            this.MovieLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.MovieLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.MovieLabel.AutoSize = true;
             this.MovieLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MovieLabel.Location = new System.Drawing.Point(133, 118);
@@ -340,6 +341,7 @@
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(3, 118);
@@ -350,6 +352,7 @@
             // 
             // ShowDateLabel
             // 
+            this.ShowDateLabel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ShowDateLabel.AutoSize = true;
             this.ShowDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShowDateLabel.Location = new System.Drawing.Point(133, 73);
@@ -360,6 +363,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 73);
@@ -370,8 +374,7 @@
             // 
             // Voucher
             // 
-            this.Voucher.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Voucher.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Voucher.AutoSize = true;
             this.Voucher.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Voucher.Location = new System.Drawing.Point(133, 6);
@@ -956,7 +959,7 @@
             this.Name = "MainForm";
             this.Text = "TicketSaleSystem";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Login_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.LoginPanel.ResumeLayout(false);
             this.LoginPanel.PerformLayout();
             this.HomePanel.ResumeLayout(false);

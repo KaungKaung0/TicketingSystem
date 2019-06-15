@@ -11,9 +11,11 @@ namespace TicketingSystem
 {
     public partial class MainForm : Form
     {
+
         public static string selected_movie = "";
         public static string selected_time = "";
         public static string selected_seat = "";
+        public static int total_seat = 0;
         public static int total_price = 0;
         public static int seat_A_price, seat_B_price, seat_C_price;
         public static string date = "";
@@ -23,12 +25,10 @@ namespace TicketingSystem
         {
             InitializeComponent();
         }
-
-        private void Login_Load(object sender, EventArgs e)
+        private void MainForm_Load(object sender, EventArgs e)
         {
-
+            LoginPanel.Visible = true;
         }
-
         private void Button1_Click_1(object sender, EventArgs e)
         {
             string email, password;
@@ -44,12 +44,6 @@ namespace TicketingSystem
             }
         }
 
-
-        private void Button5_Click(object sender, EventArgs e)
-        {
-            HomePanel.Visible = false;
-            LoginPanel.Visible = true;
-        }
         private void SelectMoviePanel_Paint(object sender, PaintEventArgs e)
         {
             Movie query = new Movie();
@@ -82,35 +76,44 @@ namespace TicketingSystem
         }
         private void BackToMovieSelect_Click(object sender, EventArgs e)
         {
+            selected_time = "";
             SelectTimePanel.Visible = false;
             SelectMoviePanel.Visible = true;
         }
         private void FirstTime_Click(object sender, EventArgs e)
         {
+            
             selected_time = FirstTime.Text;
             date = dateTimePicker1.Text;
             ShowDateLabel.Text = dateTimePicker1.Text;
-            ShowTimeLabel.Text = FirstTime.Text;
+            ShowTimeLabel.Text = selected_time;
             SelectTimePanel.Visible = false;
+            ButtonCheck(SeatPanel, dateTimePicker1.Text);
             SeatPanel.Visible = true;
         }
         private void SecondTime_Click(object sender, EventArgs e)
         {
+            
             selected_time = SecondTime.Text;
+           
             date = dateTimePicker1.Text;
             ShowDateLabel.Text = dateTimePicker1.Text;
-            ShowTimeLabel.Text = SecondTime.Text;
+            ShowTimeLabel.Text = selected_time;
             SelectTimePanel.Visible = false;
+            ButtonCheck(SeatPanel, dateTimePicker1.Text);
             SeatPanel.Visible = true;
         }
 
         private void ThirdTime_Click(object sender, EventArgs e)
         {
-            selected_time = ThirdMovie.Text;
+            
+            selected_time = ThirdTime.Text;
+          
             date = dateTimePicker1.Text;
             ShowDateLabel.Text = dateTimePicker1.Text;
-            ShowTimeLabel.Text = ThirdTime.Text;
+            ShowTimeLabel.Text = selected_time;
             SelectTimePanel.Visible = false;
+            ButtonCheck(SeatPanel, dateTimePicker1.Text);
             SeatPanel.Visible = true;
         }
 
@@ -121,16 +124,20 @@ namespace TicketingSystem
 
         private void BackToTimeSelect_Click(object sender, EventArgs e)
         {
+            Sale record = new Sale();
+            record.Clear(selected_movie, selected_time, dateTimePicker1.Text);
+            selected_time = "";
+            selected_seat = "";
+            total_price = 0;
             SeatPanel.Visible = false;
             SelectTimePanel.Visible = true;
         }
 
         private void SeatPanel_Paint(object sender, PaintEventArgs e)
         {
-            if(SeatPanel.Visible == true)
-            {
+            
                 Sale sale = new Sale();
-                price_receiver = sale.seat_price();
+                price_receiver = sale.Seat_price();
                 seat_A_price = int.Parse(price_receiver[0]);
                 seat_B_price = int.Parse(price_receiver[1]);
                 seat_C_price = int.Parse(price_receiver[2]);
@@ -138,6 +145,26 @@ namespace TicketingSystem
                 SeatBPriceTag.Text = "Seat B - " + price_receiver[1] + "Ks";
                 SeatCPriceTag.Text = "Seat C - " + price_receiver[2] + "Ks";
                 TotalPrice.Text = total_price.ToString() + "Ks";
+
+
+        }
+        public static void ButtonCheck(Panel panel, string date)
+        {
+            Sale sale = new Sale();
+            string[] bought_seat = sale.Bought_seat_id(selected_movie, selected_time, date);
+            for (int i = 0; i < bought_seat.Length; i++)
+            {
+                foreach (Control control in panel.Controls)
+                {
+                    if (control is Button temp)
+                    {
+                        if (temp.Text == bought_seat[i])
+                        {
+                            temp.Enabled = false;
+                        }
+                    }
+
+                }
             }
         }
         private void BtnA1_Click(object sender, EventArgs e)
@@ -145,9 +172,12 @@ namespace TicketingSystem
 
             selected_seat += btnA1.Text + ",";
             SelectedSeat.Text = selected_seat;
-            btnA1.Enabled = false;
+          
             total_price += seat_A_price;
+            total_seat += 1;
             TotalPrice.Text = total_price.ToString() + "Ks";
+            Sale temp = new Sale();
+            temp.Record(null, btnA1.Text, selected_movie, selected_time, dateTimePicker1.Text);
         }
 
         private void BtnA2_Click(object sender, EventArgs e)
@@ -155,28 +185,45 @@ namespace TicketingSystem
 
             selected_seat += btnA2.Text + ",";
             SelectedSeat.Text = selected_seat;
-            btnA2.Enabled = false;
+            
             total_price += seat_A_price;
+            total_seat += 1;
             TotalPrice.Text = total_price.ToString() + "Ks";
+            Sale temp = new Sale();
+            temp.Record(null, btnA2.Text, selected_movie, selected_time, dateTimePicker1.Text);
         }
+
 
 
         private void BtnB1_Click(object sender, EventArgs e)
         {
             selected_seat += btnB1.Text + ",";
             SelectedSeat.Text = selected_seat;
-            btnB1.Enabled = false;
+           
             total_price += seat_B_price;
+            total_seat += 1;
             TotalPrice.Text = total_price.ToString() + "Ks";
+            Sale temp = new Sale();
+            temp.Record(null, btnB1.Text, selected_movie, selected_time, dateTimePicker1.Text);
         }
+
+
 
         private void BtnC1_Click(object sender, EventArgs e)
         {
             selected_seat += btnC1.Text + ",";
             SelectedSeat.Text = selected_seat;
-            btnC1.Enabled = false;
+           
             total_price += seat_C_price;
+            total_seat += 1;
             TotalPrice.Text = total_price.ToString() + "Ks";
+            Sale temp = new Sale();
+            temp.Record(null, btnC1.Text, selected_movie, selected_time, dateTimePicker1.Text);
+        }
+        private void BtnSold_Click(object sender, EventArgs e)
+        {
+            Sale sold = new Sale();
+            sold.CreateVoucher(dateTimePicker1.Text,selected_movie,selected_time,selected_seat,total_seat,total_price);
         }
     }
 }
