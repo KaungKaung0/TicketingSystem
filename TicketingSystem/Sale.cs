@@ -51,6 +51,7 @@ namespace TicketingSystem
                 MySqlCommand command = new MySqlCommand(insert, connection);
                 MySqlDataReader reader = command.ExecuteReader();
                 connection.Close();
+                ConfirmSold(movie, time, date);
             }
             catch (Exception ex)
             {
@@ -58,7 +59,7 @@ namespace TicketingSystem
                 Console.WriteLine("Failed");
 
             }
-            ConfirmSold(movie, time, date);
+           
         }
         public String getLastId()
         {
@@ -94,10 +95,11 @@ namespace TicketingSystem
         }
         public void ConfirmSold(string movie,string time,string date)
         {
+            Console.WriteLine("sold");
             string id = getLastId();
             try
             {
-                string update = "UPDATE sale SET confirm = '"+1+ "' AND voucher_id = '"+id+"'  WHERE movie_name = '" + movie + "' AND time ='" + time + "' AND date= '" + date + "'";
+                string update = "UPDATE sale SET confirm = '"+1+ "' ,voucher_id = '"+id+"'  WHERE movie_name = '" + movie + "' AND time ='" + time + "' AND date= '" + date + "'";
                 connection.Open();
                 MySqlCommand mySqlCommand = new MySqlCommand(update, connection);
                 MySqlDataReader mySqlDataReader = mySqlCommand.ExecuteReader();

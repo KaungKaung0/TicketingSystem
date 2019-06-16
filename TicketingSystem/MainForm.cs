@@ -76,9 +76,12 @@ namespace TicketingSystem
         }
         private void BackToMovieSelect_Click(object sender, EventArgs e)
         {
-            selected_time = "";
+            MovieLabel.Text = "Not Selected";
+            selected_movie = null;
+            selected_time = null;
             SelectTimePanel.Visible = false;
             SelectMoviePanel.Visible = true;
+            SeatPanel.Visible = false;
         }
         private void FirstTime_Click(object sender, EventArgs e)
         {
@@ -88,20 +91,20 @@ namespace TicketingSystem
             ShowDateLabel.Text = dateTimePicker1.Text;
             ShowTimeLabel.Text = selected_time;
             SelectTimePanel.Visible = false;
-            ButtonCheck(SeatPanel, dateTimePicker1.Text);
+           
             SeatPanel.Visible = true;
+            SelectTimePanel.Visible = false;
         }
         private void SecondTime_Click(object sender, EventArgs e)
         {
-            
             selected_time = SecondTime.Text;
-           
             date = dateTimePicker1.Text;
             ShowDateLabel.Text = dateTimePicker1.Text;
             ShowTimeLabel.Text = selected_time;
             SelectTimePanel.Visible = false;
-            ButtonCheck(SeatPanel, dateTimePicker1.Text);
+          
             SeatPanel.Visible = true;
+            SelectTimePanel.Visible = false;
         }
 
         private void ThirdTime_Click(object sender, EventArgs e)
@@ -113,7 +116,8 @@ namespace TicketingSystem
             ShowDateLabel.Text = dateTimePicker1.Text;
             ShowTimeLabel.Text = selected_time;
             SelectTimePanel.Visible = false;
-            ButtonCheck(SeatPanel, dateTimePicker1.Text);
+          
+            SelectTimePanel.Visible = false;
             SeatPanel.Visible = true;
         }
 
@@ -126,11 +130,14 @@ namespace TicketingSystem
         {
             Sale record = new Sale();
             record.Clear(selected_movie, selected_time, dateTimePicker1.Text);
-            selected_time = "";
+            ShowTimeLabel.Text = "Not Selected";
+            ShowDateLabel.Text = "Not Selected";
+            SelectedSeat.Text = "Not Selected";
             selected_seat = "";
             total_price = 0;
-            SeatPanel.Visible = false;
+            total_seat = 0;
             SelectTimePanel.Visible = true;
+            SeatPanel.Visible = false;
         }
 
         private void SeatPanel_Paint(object sender, PaintEventArgs e)
@@ -145,27 +152,63 @@ namespace TicketingSystem
                 SeatBPriceTag.Text = "Seat B - " + price_receiver[1] + "Ks";
                 SeatCPriceTag.Text = "Seat C - " + price_receiver[2] + "Ks";
                 TotalPrice.Text = total_price.ToString() + "Ks";
-
-
+                ButtonCheck(SeatPanel);
+                
         }
-        public static void ButtonCheck(Panel panel, string date)
+        public static void ButtonCheck(Panel panel)
         {
             Sale sale = new Sale();
+            Console.WriteLine(selected_movie);
+            Console.WriteLine(selected_time);
+            Console.WriteLine(date);
             string[] bought_seat = sale.Bought_seat_id(selected_movie, selected_time, date);
             for (int i = 0; i < bought_seat.Length; i++)
             {
                 foreach (Control control in panel.Controls)
                 {
                     if (control is Button temp)
-                    {
-                        if (temp.Text == bought_seat[i])
+                    {if(temp.Enabled == true)
                         {
-                            temp.Enabled = false;
+                            if (temp.Name == ("btn" + bought_seat[i]))
+                            {
+                                temp.Enabled = false;
+                                temp.Text = "Sold";
+                                panel.Update();
+                            }
                         }
-                    }
+                    else if(temp.Enabled == false)
+                        {
+                            if (temp.Name == ("btn" + bought_seat[i]))
+                            {
+                                temp.Enabled = true;
+                                temp.Text = bought_seat[i];
+                               
+                            }
+                        }
 
+                    }
                 }
             }
+/*            for (int i = 0; i < bought_seat.Length; i++)
+            {
+                foreach (Control control in panel.Controls)
+                {
+                    if (control is Button temp)
+                    {if(temp.Enabled == false)
+                        {
+                            if ((temp.Name == ("btn" + bought_seat[i])))
+                            {
+                                temp.Enabled = true;
+                               if(temp.Text == "Sold" && (temp.Name == ("btn" + bought_seat[i])))
+                                {
+                                    temp.Text = bought_seat[i];
+                                }
+                    
+                            }
+                        }
+                    }
+                }
+            }*/
         }
         private void BtnA1_Click(object sender, EventArgs e)
         {
@@ -207,7 +250,14 @@ namespace TicketingSystem
             temp.Record(null, btnB1.Text, selected_movie, selected_time, dateTimePicker1.Text);
         }
 
-
+        private void BtnAddMovie_Click(object sender, EventArgs e)
+        {
+            string movie_name = TxtMovieName.Text;
+            string movie_category = TxtMovieCategory.Text;
+            string theater_name = TxtTheaterName.Text;
+            Movie addMovie = new Movie();
+            addMovie.Insert(movie_name, movie_category, theater_name);
+        }
 
         private void BtnC1_Click(object sender, EventArgs e)
         {
@@ -224,6 +274,16 @@ namespace TicketingSystem
         {
             Sale sold = new Sale();
             sold.CreateVoucher(dateTimePicker1.Text,selected_movie,selected_time,selected_seat,total_seat,total_price);
+            MessageBox.Show("Thanks For Your Purchase.Have a Great Time!","Purchase Success",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            SeatPanel.Visible = false;
+            ShowDateLabel.Text = "Not Selected";
+            ShowTimeLabel.Text = "Not Selected";
+            TotalPrice.Text = "0Ks";
+            SelectedSeat.Text = "Not Selected";
+            total_seat = 0;
+            selected_seat = "";
+            total_price = 0;
+            SelectMoviePanel.Visible = true;
         }
     }
 }

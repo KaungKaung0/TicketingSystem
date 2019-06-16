@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,6 +52,18 @@
             this.ShowDateLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Voucher = new System.Windows.Forms.Label();
+            this.SelectTimePanel = new System.Windows.Forms.Panel();
+            this.BackToMovieSelect = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.ThirdTime = new System.Windows.Forms.Button();
+            this.SecondTime = new System.Windows.Forms.Button();
+            this.FirstTime = new System.Windows.Forms.Button();
+            this.SelectMoviePanel = new System.Windows.Forms.Panel();
+            this.ThirdMovie = new System.Windows.Forms.Button();
+            this.SecondMovie = new System.Windows.Forms.Button();
+            this.FirstMovie = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SeatPanel = new System.Windows.Forms.Panel();
             this.button19 = new System.Windows.Forms.Button();
             this.button20 = new System.Windows.Forms.Button();
@@ -88,33 +101,36 @@
             this.btnA2 = new System.Windows.Forms.Button();
             this.BackToTimeSelect = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SelectTimePanel = new System.Windows.Forms.Panel();
-            this.BackToMovieSelect = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.ThirdTime = new System.Windows.Forms.Button();
-            this.SecondTime = new System.Windows.Forms.Button();
-            this.FirstTime = new System.Windows.Forms.Button();
-            this.SelectMoviePanel = new System.Windows.Forms.Panel();
-            this.ThirdMovie = new System.Windows.Forms.Button();
-            this.SecondMovie = new System.Windows.Forms.Button();
-            this.FirstMovie = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnAddMovie = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.TxtTheaterName = new System.Windows.Forms.TextBox();
+            this.TxtMovieCategory = new System.Windows.Forms.TextBox();
+            this.TxtMovieName = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.LoginPanel.SuspendLayout();
             this.HomePanel.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.CheckPanel.SuspendLayout();
-            this.SeatPanel.SuspendLayout();
             this.SelectTimePanel.SuspendLayout();
             this.SelectMoviePanel.SuspendLayout();
+            this.SeatPanel.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // LoginPanel
             // 
             this.LoginPanel.AutoSize = true;
             this.LoginPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LoginPanel.Controls.Add(this.label8);
             this.LoginPanel.Controls.Add(this.label3);
             this.LoginPanel.Controls.Add(this.button1);
             this.LoginPanel.Controls.Add(this.label2);
@@ -126,6 +142,19 @@
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.Size = new System.Drawing.Size(848, 568);
             this.LoginPanel.TabIndex = 7;
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(260, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(432, 25);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Please Login In With Staff\'s Email and Password";
             // 
             // label3
             // 
@@ -208,6 +237,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -218,9 +248,9 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.CheckPanel);
-            this.tabPage1.Controls.Add(this.SeatPanel);
             this.tabPage1.Controls.Add(this.SelectTimePanel);
             this.tabPage1.Controls.Add(this.SelectMoviePanel);
+            this.tabPage1.Controls.Add(this.SeatPanel);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -382,6 +412,146 @@
             this.Voucher.Size = new System.Drawing.Size(63, 17);
             this.Voucher.TabIndex = 0;
             this.Voucher.Text = "Sale Info";
+            // 
+            // SelectTimePanel
+            // 
+            this.SelectTimePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectTimePanel.Controls.Add(this.BackToMovieSelect);
+            this.SelectTimePanel.Controls.Add(this.label6);
+            this.SelectTimePanel.Controls.Add(this.dateTimePicker1);
+            this.SelectTimePanel.Controls.Add(this.ThirdTime);
+            this.SelectTimePanel.Controls.Add(this.SecondTime);
+            this.SelectTimePanel.Controls.Add(this.FirstTime);
+            this.SelectTimePanel.Location = new System.Drawing.Point(3, 0);
+            this.SelectTimePanel.Name = "SelectTimePanel";
+            this.SelectTimePanel.Size = new System.Drawing.Size(491, 536);
+            this.SelectTimePanel.TabIndex = 0;
+            this.SelectTimePanel.Visible = false;
+            // 
+            // BackToMovieSelect
+            // 
+            this.BackToMovieSelect.Location = new System.Drawing.Point(9, 7);
+            this.BackToMovieSelect.Name = "BackToMovieSelect";
+            this.BackToMovieSelect.Size = new System.Drawing.Size(75, 23);
+            this.BackToMovieSelect.TabIndex = 10;
+            this.BackToMovieSelect.Text = "Back";
+            this.BackToMovieSelect.UseVisualStyleBackColor = true;
+            this.BackToMovieSelect.Click += new System.EventHandler(this.BackToMovieSelect_Click);
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(126, 23);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(221, 26);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Select Date and Time";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(134, 93);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(213, 21);
+            this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            // 
+            // ThirdTime
+            // 
+            this.ThirdTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ThirdTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ThirdTime.Location = new System.Drawing.Point(151, 289);
+            this.ThirdTime.Name = "ThirdTime";
+            this.ThirdTime.Size = new System.Drawing.Size(183, 50);
+            this.ThirdTime.TabIndex = 7;
+            this.ThirdTime.Text = "6:30PM";
+            this.ThirdTime.UseVisualStyleBackColor = true;
+            this.ThirdTime.Click += new System.EventHandler(this.ThirdTime_Click);
+            // 
+            // SecondTime
+            // 
+            this.SecondTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SecondTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecondTime.Location = new System.Drawing.Point(151, 213);
+            this.SecondTime.Name = "SecondTime";
+            this.SecondTime.Size = new System.Drawing.Size(183, 50);
+            this.SecondTime.TabIndex = 6;
+            this.SecondTime.Text = "12:30 PM";
+            this.SecondTime.UseVisualStyleBackColor = true;
+            this.SecondTime.Click += new System.EventHandler(this.SecondTime_Click);
+            // 
+            // FirstTime
+            // 
+            this.FirstTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.FirstTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstTime.Location = new System.Drawing.Point(151, 133);
+            this.FirstTime.Name = "FirstTime";
+            this.FirstTime.Size = new System.Drawing.Size(183, 50);
+            this.FirstTime.TabIndex = 5;
+            this.FirstTime.Text = "9:30 AM";
+            this.FirstTime.UseVisualStyleBackColor = true;
+            this.FirstTime.Click += new System.EventHandler(this.FirstTime_Click);
+            // 
+            // SelectMoviePanel
+            // 
+            this.SelectMoviePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SelectMoviePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.SelectMoviePanel.Controls.Add(this.ThirdMovie);
+            this.SelectMoviePanel.Controls.Add(this.SecondMovie);
+            this.SelectMoviePanel.Controls.Add(this.FirstMovie);
+            this.SelectMoviePanel.Controls.Add(this.label4);
+            this.SelectMoviePanel.Location = new System.Drawing.Point(6, 0);
+            this.SelectMoviePanel.Name = "SelectMoviePanel";
+            this.SelectMoviePanel.Size = new System.Drawing.Size(487, 536);
+            this.SelectMoviePanel.TabIndex = 1;
+            this.SelectMoviePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SelectMoviePanel_Paint);
+            // 
+            // ThirdMovie
+            // 
+            this.ThirdMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ThirdMovie.Location = new System.Drawing.Point(142, 376);
+            this.ThirdMovie.Name = "ThirdMovie";
+            this.ThirdMovie.Size = new System.Drawing.Size(200, 50);
+            this.ThirdMovie.TabIndex = 7;
+            this.ThirdMovie.UseVisualStyleBackColor = true;
+            this.ThirdMovie.Click += new System.EventHandler(this.ThirdMovie_Click);
+            // 
+            // SecondMovie
+            // 
+            this.SecondMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SecondMovie.Location = new System.Drawing.Point(142, 297);
+            this.SecondMovie.Name = "SecondMovie";
+            this.SecondMovie.Size = new System.Drawing.Size(200, 50);
+            this.SecondMovie.TabIndex = 6;
+            this.SecondMovie.UseVisualStyleBackColor = true;
+            this.SecondMovie.Click += new System.EventHandler(this.SecondMovie_Click);
+            // 
+            // FirstMovie
+            // 
+            this.FirstMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.FirstMovie.Location = new System.Drawing.Point(142, 216);
+            this.FirstMovie.Name = "FirstMovie";
+            this.FirstMovie.Size = new System.Drawing.Size(200, 50);
+            this.FirstMovie.TabIndex = 5;
+            this.FirstMovie.UseVisualStyleBackColor = true;
+            this.FirstMovie.Click += new System.EventHandler(this.FirstMovie_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(170, 105);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(137, 26);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Select Movie";
             // 
             // SeatPanel
             // 
@@ -799,146 +969,6 @@
             this.panel1.Size = new System.Drawing.Size(439, 15);
             this.panel1.TabIndex = 0;
             // 
-            // SelectTimePanel
-            // 
-            this.SelectTimePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SelectTimePanel.Controls.Add(this.BackToMovieSelect);
-            this.SelectTimePanel.Controls.Add(this.label6);
-            this.SelectTimePanel.Controls.Add(this.dateTimePicker1);
-            this.SelectTimePanel.Controls.Add(this.ThirdTime);
-            this.SelectTimePanel.Controls.Add(this.SecondTime);
-            this.SelectTimePanel.Controls.Add(this.FirstTime);
-            this.SelectTimePanel.Location = new System.Drawing.Point(3, 0);
-            this.SelectTimePanel.Name = "SelectTimePanel";
-            this.SelectTimePanel.Size = new System.Drawing.Size(491, 536);
-            this.SelectTimePanel.TabIndex = 0;
-            this.SelectTimePanel.Visible = false;
-            // 
-            // BackToMovieSelect
-            // 
-            this.BackToMovieSelect.Location = new System.Drawing.Point(9, 7);
-            this.BackToMovieSelect.Name = "BackToMovieSelect";
-            this.BackToMovieSelect.Size = new System.Drawing.Size(75, 23);
-            this.BackToMovieSelect.TabIndex = 10;
-            this.BackToMovieSelect.Text = "Back";
-            this.BackToMovieSelect.UseVisualStyleBackColor = true;
-            this.BackToMovieSelect.Click += new System.EventHandler(this.BackToMovieSelect_Click);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(126, 23);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(221, 26);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Select Date and Time";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(134, 93);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(213, 21);
-            this.dateTimePicker1.TabIndex = 8;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
-            // 
-            // ThirdTime
-            // 
-            this.ThirdTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ThirdTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ThirdTime.Location = new System.Drawing.Point(151, 289);
-            this.ThirdTime.Name = "ThirdTime";
-            this.ThirdTime.Size = new System.Drawing.Size(183, 50);
-            this.ThirdTime.TabIndex = 7;
-            this.ThirdTime.Text = "6:30PM";
-            this.ThirdTime.UseVisualStyleBackColor = true;
-            this.ThirdTime.Click += new System.EventHandler(this.ThirdTime_Click);
-            // 
-            // SecondTime
-            // 
-            this.SecondTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SecondTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SecondTime.Location = new System.Drawing.Point(151, 213);
-            this.SecondTime.Name = "SecondTime";
-            this.SecondTime.Size = new System.Drawing.Size(183, 50);
-            this.SecondTime.TabIndex = 6;
-            this.SecondTime.Text = "12:30 PM";
-            this.SecondTime.UseVisualStyleBackColor = true;
-            this.SecondTime.Click += new System.EventHandler(this.SecondTime_Click);
-            // 
-            // FirstTime
-            // 
-            this.FirstTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.FirstTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstTime.Location = new System.Drawing.Point(151, 133);
-            this.FirstTime.Name = "FirstTime";
-            this.FirstTime.Size = new System.Drawing.Size(183, 50);
-            this.FirstTime.TabIndex = 5;
-            this.FirstTime.Text = "9:30 AM";
-            this.FirstTime.UseVisualStyleBackColor = true;
-            this.FirstTime.Click += new System.EventHandler(this.FirstTime_Click);
-            // 
-            // SelectMoviePanel
-            // 
-            this.SelectMoviePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.SelectMoviePanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.SelectMoviePanel.Controls.Add(this.ThirdMovie);
-            this.SelectMoviePanel.Controls.Add(this.SecondMovie);
-            this.SelectMoviePanel.Controls.Add(this.FirstMovie);
-            this.SelectMoviePanel.Controls.Add(this.label4);
-            this.SelectMoviePanel.Location = new System.Drawing.Point(6, 0);
-            this.SelectMoviePanel.Name = "SelectMoviePanel";
-            this.SelectMoviePanel.Size = new System.Drawing.Size(487, 536);
-            this.SelectMoviePanel.TabIndex = 1;
-            this.SelectMoviePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.SelectMoviePanel_Paint);
-            // 
-            // ThirdMovie
-            // 
-            this.ThirdMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ThirdMovie.Location = new System.Drawing.Point(142, 376);
-            this.ThirdMovie.Name = "ThirdMovie";
-            this.ThirdMovie.Size = new System.Drawing.Size(200, 50);
-            this.ThirdMovie.TabIndex = 7;
-            this.ThirdMovie.UseVisualStyleBackColor = true;
-            this.ThirdMovie.Click += new System.EventHandler(this.ThirdMovie_Click);
-            // 
-            // SecondMovie
-            // 
-            this.SecondMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.SecondMovie.Location = new System.Drawing.Point(142, 297);
-            this.SecondMovie.Name = "SecondMovie";
-            this.SecondMovie.Size = new System.Drawing.Size(200, 50);
-            this.SecondMovie.TabIndex = 6;
-            this.SecondMovie.UseVisualStyleBackColor = true;
-            this.SecondMovie.Click += new System.EventHandler(this.SecondMovie_Click);
-            // 
-            // FirstMovie
-            // 
-            this.FirstMovie.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.FirstMovie.Location = new System.Drawing.Point(142, 216);
-            this.FirstMovie.Name = "FirstMovie";
-            this.FirstMovie.Size = new System.Drawing.Size(200, 50);
-            this.FirstMovie.TabIndex = 5;
-            this.FirstMovie.UseVisualStyleBackColor = true;
-            this.FirstMovie.Click += new System.EventHandler(this.FirstMovie_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(170, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(137, 26);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Select Movie";
-            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -948,6 +978,125 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Sale Records";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Controls.Add(this.panel2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(840, 542);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Add New Movie";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.AutoScroll = true;
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.btnAddMovie);
+            this.panel3.Location = new System.Drawing.Point(508, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(332, 542);
+            this.panel3.TabIndex = 1;
+            // 
+            // btnAddMovie
+            // 
+            this.btnAddMovie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddMovie.AutoSize = true;
+            this.btnAddMovie.Location = new System.Drawing.Point(53, 4);
+            this.btnAddMovie.Name = "btnAddMovie";
+            this.btnAddMovie.Size = new System.Drawing.Size(223, 43);
+            this.btnAddMovie.TabIndex = 0;
+            this.btnAddMovie.Text = "Add Movie";
+            this.btnAddMovie.UseVisualStyleBackColor = true;
+            this.btnAddMovie.Click += new System.EventHandler(this.BtnAddMovie_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.TxtTheaterName);
+            this.panel2.Controls.Add(this.TxtMovieCategory);
+            this.panel2.Controls.Add(this.TxtMovieName);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Location = new System.Drawing.Point(0, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(502, 542);
+            this.panel2.TabIndex = 0;
+            // 
+            // TxtTheaterName
+            // 
+            this.TxtTheaterName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TxtTheaterName.Location = new System.Drawing.Point(223, 155);
+            this.TxtTheaterName.Name = "TxtTheaterName";
+            this.TxtTheaterName.Size = new System.Drawing.Size(207, 20);
+            this.TxtTheaterName.TabIndex = 6;
+            // 
+            // TxtMovieCategory
+            // 
+            this.TxtMovieCategory.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TxtMovieCategory.Location = new System.Drawing.Point(223, 122);
+            this.TxtMovieCategory.Name = "TxtMovieCategory";
+            this.TxtMovieCategory.Size = new System.Drawing.Size(207, 20);
+            this.TxtMovieCategory.TabIndex = 5;
+            // 
+            // TxtMovieName
+            // 
+            this.TxtMovieName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.TxtMovieName.Location = new System.Drawing.Point(223, 91);
+            this.TxtMovieName.Name = "TxtMovieName";
+            this.TxtMovieName.Size = new System.Drawing.Size(207, 20);
+            this.TxtMovieName.TabIndex = 4;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(171, 11);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(165, 26);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Add New Movie";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(97, 122);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 13);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Movie Category";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(97, 155);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Theater Name";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(97, 91);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Movie Name";
             // 
             // MainForm
             // 
@@ -967,11 +1116,16 @@
             this.tabPage1.ResumeLayout(false);
             this.CheckPanel.ResumeLayout(false);
             this.CheckPanel.PerformLayout();
-            this.SeatPanel.ResumeLayout(false);
-            this.SeatPanel.PerformLayout();
             this.SelectTimePanel.ResumeLayout(false);
             this.SelectTimePanel.PerformLayout();
             this.SelectMoviePanel.ResumeLayout(false);
+            this.SeatPanel.ResumeLayout(false);
+            this.SeatPanel.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1052,6 +1206,18 @@
         private System.Windows.Forms.Label SeatBPriceTag;
         private System.Windows.Forms.Label SeatAPriceTag;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnAddMovie;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox TxtTheaterName;
+        private System.Windows.Forms.TextBox TxtMovieCategory;
+        private System.Windows.Forms.TextBox TxtMovieName;
+        private System.Windows.Forms.Label label16;
     }
 }
 
